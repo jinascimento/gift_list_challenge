@@ -18,6 +18,7 @@
 /storage/*
 !/storage/.keep
 
+# Environments variables
 /node_modules
 /yarn-error.log
 
