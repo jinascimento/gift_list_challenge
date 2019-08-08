@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_08_231131) do
+ActiveRecord::Schema.define(version: 2019_08_08_233426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2019_08_08_231131) do
     t.float "total_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_lists_on_category_id"
   end
 
   create_table "product_items", force: :cascade do |t|
@@ -60,6 +62,7 @@ ActiveRecord::Schema.define(version: 2019_08_08_231131) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "lists", "categories"
   add_foreign_key "product_items", "lists"
   add_foreign_key "product_items", "products"
   add_foreign_key "products", "categories"
