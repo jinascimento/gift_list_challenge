@@ -17,6 +17,7 @@
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
+.env
 
 # Environments variables
 /node_modules
