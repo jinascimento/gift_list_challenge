@@ -1,11 +1,23 @@
 <%= stylesheet_link_tag    'lists/index', media: 'all', 'data-turbolinks-track': 'reload' %>
-
+<section class="text-center wizard">
+  <div class="container">
+    <div class="tab-list wizard">
+      <div class="wizard__wizard-item-first">
+        Escolha sua lista
+      </div>
+      <span class="border h-100" style="background-color: #D4EDE7;"></span>
+      <div class="wizard__wizard-item-last">
+        Adicione seus produtos
+      </div>
+    </div>
+  </div>
+</section>
 <section class="jumbotron text-center">
   <div class="container">
     <h1 class="jumbotron-heading">Listas</h1>
-    <p class="lead text-muted">Escolha uma lista pronta</p>
+    <p class="lead text-muted">Escolha uma lista pronta  ou crie a sua lista personalizada</p>
     <p>
-      <%= link_to 'Customizar lista', '#', {remote: true, 'data-toggle': 'modal', 'data-target': '#new-project',  class: 'btn btn-primary my-2' } %>
+      <%= link_to 'Criar lista >>', new_list_path, class: 'btn btn-primary my-2' %>
     </p>
   </div>
 </section>

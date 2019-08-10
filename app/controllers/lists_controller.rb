@@ -10,7 +10,7 @@ class ListsController < ApplicationController
   end
 
   def new
-
+    @list = List.new(category: Category.find_by_name('customization'))
   end
 
   def create

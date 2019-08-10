@@ -13,6 +13,5 @@ Rails.application.config.assets.paths += Dir["#{Rails.root}/vendor/assets/*"]
 # folder are already added.
 Rails.application.config.assets.precompile += %w(
   lists/index.scss
-  nunito-font.css
-  style.css
+  override_bootstrap.scss
  )
