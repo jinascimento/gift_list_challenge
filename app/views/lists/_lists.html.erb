@@ -1,0 +1,8 @@
+<%= link_to list_path(l), class: 'col-sm' do %>
+    <div class="card  box-shadow">
+      <%= image_tag("#{l.category.name.gsub(' ', '-')}.png", {:style => "", class: "card-img-top #{l.category.name.gsub(' ', '-')}", 'data-holder-rendered': "true"}) %>
+    </div>
+<% end %>
+<% if i%2 == 0 %>
+  <div class="w-100"></div>
+<% end %>

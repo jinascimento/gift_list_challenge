@@ -1,0 +1,22 @@
+<%= stylesheet_link_tag    'lists/index', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading">Listas</h1>
+    <p class="lead text-muted">Escolha uma lista pronta</p>
+    <p>
+      <%= link_to 'Customizar lista', '#', {remote: true, 'data-toggle': 'modal', 'data-target': '#new-project',  class: 'btn btn-primary my-2' } %>
+    </p>
+  </div>
+</section>
+
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <% @lists.each_with_index do |l, i| %>
+        <% i += 1 %>
+        <%= render 'lists', l: l, i: i %>
+      <% end %>
+    </div>
+  </div>
+</div>
