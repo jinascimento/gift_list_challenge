@@ -13,7 +13,7 @@
               <li>
                 <span>
                   <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-                  <%= fa_icon "sign-out"  %>
+                  <%= fa_icon "sign-out",class: 'fa-lg'  %>
                 </span>
               </li>
             <% end %>
@@ -26,7 +26,7 @@
     <div class="container d-flex justify-content-between">
       <span class="navbar-brand d-flex align-items-center"><strong>Empresa X</strong></span>
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-        <span><%= fa_icon "user" %></span>
+        <span><%= fa_icon "user", class: 'fa-lg' %></span>
       </button>
     </div>
   </div>
