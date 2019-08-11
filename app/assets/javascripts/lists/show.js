@@ -1,5 +1,10 @@
-document.addEventListener("turbolinks:load", function() {
-    $('.wizard__wizard-item-first').children().removeClass(('wizard__item--active'));
-    $('.wizard__wizard-item-last').children().addClass(('wizard__item--active'));
+jQuery(document).ready(function () {
+    if (page.controller() !== 'lists' && page.action() !== 'show') { return; }
+    activeLastItem();
 });
 
+function activeLastItem() {
+    $('.wizard__wizard-item-last').children().find('i').removeClass('fa-circle');
+    $('.wizard__wizard-item-last').children().find('i').addClass('fa-check-circle');
+    $('.wizard__wizard-item-last').children().addClass(('wizard__item--active'));
+}

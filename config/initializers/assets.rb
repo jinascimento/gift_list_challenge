@@ -15,6 +15,7 @@ Rails.application.config.assets.precompile += %w(
  )
 # folder are already added.
 Rails.application.config.assets.precompile += %w(
+  lists/wizard.scss
   lists/index.scss
   override_bootstrap.scss
  )

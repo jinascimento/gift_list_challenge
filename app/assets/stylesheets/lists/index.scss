@@ -22,25 +22,3 @@ img.bridal-shower {
   background-color: #E1B68B;
 }
 
-.wizard {
-  text-align: center;
-  display: flex;
-  height: 50px;
-  align-items: center;
-  background-color: #fd6b54;
-  color: #ffffff;
-  .wizard__wizard-item-first {
-    flex-grow: 1;
-    //margin: auto;
-  }
-
-  .wizard__wizard-item-last {
-    flex-grow: 1;
-    //margin: auto;
-  }
-
-  .wizard__item--active {
-    color: #000000;
-  }
-}
-
