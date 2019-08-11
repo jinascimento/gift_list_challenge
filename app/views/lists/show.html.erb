@@ -1,31 +1,25 @@
-<%= javascript_include_tag 'lists/show', 'data-turbolinks-track': 'reload' %>
 <%= stylesheet_link_tag    'lists/wizard', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= stylesheet_link_tag    'lists/show', media: 'all', 'data-turbolinks-track': 'reload' %>
-<%= render 'wizard' %>
+<section class="text-center wizard">
+  <div class="container">
+    <div class="tab-list wizard">
+    </div>
+  </div>
+</section>
 <section class="jumbotron text-center">
   <div class="container">
-    <h1 class="jumbotron-heading">Procure seus produtos</h1>
-    <p class="lead text-muted">Escolha uma lista pronta  ou crie a sua lista personalizada</p>
+    <h1 class="jumbotron-heading"><%= @list.name %></h1>
     <p>
-    <div id="cover">
-      <form method="get" action="">
-        <div class="tb">
-          <div class="td"><input type="text" placeholder="Search" required></div>
-          <div class="td" id="s-cover">
-            <button type="submit">
-              <div id="s-circle"></div>
-              <span></span>
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
+      <%= link_to new_list_product_item_path(@list), { class: 'btn btn-primary my-2' } do %>
+        <span>Adicionar seus produtos <%= fa_icon 'angle-double-right' %></span>
+      <% end %>
     </p>
   </div>
 </section>
 
 <div class="album py-5 bg-light">
   <div class="container">
+    <h3 class="  text-center">Produtos</h3>
     <div class="row" id="product-item">
       <%= render 'product_items' %>
     </div>

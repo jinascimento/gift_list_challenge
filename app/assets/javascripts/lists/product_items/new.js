@@ -1,4 +1,5 @@
 jQuery(document).ready(function () {
+    debugger
     if (page.controller() !== 'lists' && page.action() !== 'show') { return; }
     activeLastItem();
 });

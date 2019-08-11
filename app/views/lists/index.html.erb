@@ -7,7 +7,9 @@
     <h1 class="jumbotron-heading">Listas</h1>
     <p class="lead text-muted">Escolha uma lista pronta  ou crie a sua lista personalizada</p>
     <p>
-      <%= link_to 'Criar lista >>', new_list_path, {remote: true, class: 'btn btn-primary my-2', 'data-toogle': 'modal', 'data-target': '#newList'} %>
+      <%= link_to new_list_path, {remote: true, class: 'btn btn-primary my-2', 'data-toogle': 'modal', 'data-target': '#newList'} do %>
+        <span>Criar lista <%= fa_icon 'angle-double-right' %></span>
+      <% end %>
     </p>
   </div>
 </section>

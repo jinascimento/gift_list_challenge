@@ -11,7 +11,7 @@ Rails.application.config.assets.paths += Dir["#{Rails.root}/vendor/assets/*"]
 # Precompile additional assets.
 Rails.application.config.assets.precompile += %w(
   lists/index.js
-  lists/show.js
+  lists/product_items/new.js
  )
 # folder are already added.
 Rails.application.config.assets.precompile += %w(
