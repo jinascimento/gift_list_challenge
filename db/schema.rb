@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2019_08_09_003234) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_id"
-    t.integer "product_item_count"
+    t.integer "product_items_count"
     t.index ["category_id"], name: "index_lists_on_category_id"
   end
 
