@@ -1,0 +1,5 @@
+
+$("#product-item").html("<%= j render('product_items') %>");
+$("#paginator").html("<%= j paginate(@product_items, remote: true, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm", nav_class: "d-inline-b") %>");
+
+$(".pager-info").html("<%= "Visualizando #{@product_items.current_page} - #{@product_items.total_pages} de #{@list.product_items_count} registros" %>");

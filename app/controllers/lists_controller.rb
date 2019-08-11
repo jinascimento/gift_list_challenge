@@ -6,7 +6,7 @@ class ListsController < ApplicationController
   end
 
   def show
-
+     @product_items = ProductItem.where(list: @list).page(params[:page]).per(params[:per_page] || 10)
   end
 
   def new
