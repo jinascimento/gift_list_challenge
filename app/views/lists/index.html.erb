@@ -1,18 +1,6 @@
 <%= stylesheet_link_tag    'lists/index', media: 'all', 'data-turbolinks-track': 'reload' %>
-<section class="text-center wizard">
-  <div class="container">
-    <div class="tab-list wizard">
-      <div class="wizard__wizard-item-first">
-        <span class="wizard__item"><%= fa_icon "check-circle", class: 'fa-lg wizard__item' %> Escolha sua lista</span>
-
-      </div>
-      <span class="border h-100"></span>
-      <div class="wizard__wizard-item-last">
-        <span class="wizard__item"><%= fa_icon "check-circle", class: 'fa-lg wizard__item' %> Adicione seus produtos</span>
-      </div>
-    </div>
-  </div>
-</section>
+<%= javascript_include_tag 'lists/index', 'data-turbolinks-track': 'reload' %>
+<%= render 'wizard' %>
 <section class="jumbotron text-center">
   <div class="container">
     <h1 class="jumbotron-heading">Listas</h1>

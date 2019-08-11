@@ -2,7 +2,7 @@ class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit]
 
   def index
-    @lists = List.includes(:category).where.not(categories: { name: 'customization' })
+    @lists = List.includes(:category)
   end
 
   def show
