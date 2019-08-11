@@ -3,12 +3,12 @@
   <div class="container">
     <div class="tab-list wizard">
       <div class="wizard__wizard-item-first">
-        <span><%= fa_icon "check-circle", class: 'fa-lg' %></span>
-        Escolha sua lista
+        <span class="wizard__item"><%= fa_icon "check-circle", class: 'fa-lg wizard__item' %> Escolha sua lista</span>
+
       </div>
-      <span class="border h-100" style="background-color: #D4EDE7;"></span>
+      <span class="border h-100"></span>
       <div class="wizard__wizard-item-last">
-        Adicione seus produtos
+        <span class="wizard__item"><%= fa_icon "check-circle", class: 'fa-lg wizard__item' %> Adicione seus produtos</span>
       </div>
     </div>
   </div>
@@ -18,7 +18,7 @@
     <h1 class="jumbotron-heading">Listas</h1>
     <p class="lead text-muted">Escolha uma lista pronta  ou crie a sua lista personalizada</p>
     <p>
-      <%= link_to 'Criar lista >>', new_list_path, class: 'btn btn-primary my-2' %>
+      <%= link_to 'Criar lista >>', new_list_path, {remote: true, class: 'btn btn-primary my-2', 'data-toogle': 'modal', 'data-target': '#newList'} %>
     </p>
   </div>
 </section>
@@ -34,28 +34,7 @@
   </div>
 </div>
 
- Button trigger modal
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
 
- Modal
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
+<div class="modal fade" id="newList" tabindex="-1" role="dialog" aria-labelledby="newListLabel" aria-hidden="true">
+
 </div>

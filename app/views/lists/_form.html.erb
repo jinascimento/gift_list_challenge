@@ -1,0 +1,22 @@
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="newListLabel">Crie sua lista</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <%= form_with model: @list do |l| %>
+      <div class="modal-body">
+          <div class="form-group">
+            <%= l.label :name, class: 'col-form-label'%>
+            <%= l.text_field :name, class: 'form-control' %>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <%= l.submit 'Criar', class: 'btn btn-primary' %>
+      </div>
+     <% end %>
+  </div>
+</div>

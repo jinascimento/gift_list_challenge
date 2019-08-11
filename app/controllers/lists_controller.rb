@@ -11,10 +11,16 @@ class ListsController < ApplicationController
 
   def new
     @list = List.new(category: Category.find_by_name('customization'))
+    respond_to(&:js)
   end
 
   def create
-
+    create_list = Lists::ListCreator.call(params_list)
+    if create_list
+      render :create
+    else
+      render :new
+    end
   end
 
   def edit
@@ -26,6 +32,10 @@ class ListsController < ApplicationController
   end
 
   private
+
+  def params_list
+    params.require(:list).permit(:name)
+  end
 
   def set_list
     @list = List.find_by_id(params[:id])
