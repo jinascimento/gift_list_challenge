@@ -1,5 +1,6 @@
 $("#product").html("<%= j render('lists/product_items/product') %>");
 $("#paginator").html("<%= j paginate(@products, remote: true, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm", nav_class: "d-inline-b") %>");
 
-$('#form-search-product').attr('action', '/categories/'+<%= @products.first.category_id %>+'/products/search');
+$('#category_id').attr('value', <%= @products.first.category_id %>);
+$('#form-search-product').attr('action', "/categories/<%= @products.first.category_id %>/products/search");
 $(".pager-info").html("<%= "Visualizando #{@products.current_page} de #{@products.total_pages} paginas" %>");

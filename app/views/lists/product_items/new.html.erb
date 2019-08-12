@@ -25,6 +25,7 @@
       <%= form_with url: search_category_products_path(category_id: @list.category_id), method: :get, id: 'form-search-product' do |f| %>
         <div class="tb">
           <div class="td">
+            <%= f.hidden_field :category_id %>
             <%= f.text_field :name, placeholder: 'Nome do produto', required: true %>
           </div>
           <div class="td" id="s-cover">

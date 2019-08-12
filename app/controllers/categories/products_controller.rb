@@ -1,6 +1,8 @@
 class Categories::ProductsController < ApplicationController
   def search
-    @products = Product.where(search_params).page(params[:page]).per(params[:per_page] || 10)
+    @products = Product.search_on_elasticsearch(search_params[:name], search_params[:category_id],
+                                                params[:page], params[:per_page]
+    )
   end
 
   private
