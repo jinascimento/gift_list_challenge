@@ -1,24 +1,26 @@
 <%= javascript_include_tag 'lists/product_items/new', 'data-turbolinks-track': 'reload' %>
 <%= stylesheet_link_tag    'lists/wizard', media: 'all', 'data-turbolinks-track': 'reload' %>
-<%= stylesheet_link_tag    'lists/show', media: 'all', 'data-turbolinks-track': 'reload' %>
-<%= render 'wizard' %>
+<%= stylesheet_link_tag    'lists/product_items/new', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<%= render 'lists/wizard' %>
 <section class="jumbotron text-center">
   <div class="container">
-    <h1 class="jumbotron-heading">Procure seus produtos</h1>
-    <p class="lead text-muted">Escolha uma lista pronta  ou crie a sua lista personalizada</p>
+    <h1 class="jumbotron-heading" data-list-category="<%= @list.category_id %>"><%= @list.name %></h1>
+    <p class="lead text-muted">Procure seus produtos
     <p>
     <div id="cover">
-      <form method="get" action="">
+      <%= form_with url: search_category_products_path(category_id: @list.category_id), method: :get do |f| %>
         <div class="tb">
-          <div class="td"><input type="text" placeholder="Search" required></div>
+          <div class="td">
+            <%= f.text_field :name, placeholder: 'Nome do produto', required: true %>
+          </div>
           <div class="td" id="s-cover">
-            <button type="submit">
-              <div id="s-circle"></div>
-              <span></span>
-            </button>
+            <%= button_tag type: 'submit', id: "search-product" do %>
+              <%= fa_icon "search", class: 'fa-2x' %>
+            <% end %>
           </div>
         </div>
-      </form>
+      <% end %>
     </div>
     </p>
   </div>
@@ -26,19 +28,19 @@
 
 <div class="album py-5 bg-light">
   <div class="container">
-    <div class="row" id="product-item">
-      <%= render 'product_items' %>
+    <div class="row" id="product">
+      <%#= render 'product' %>
     </div>
   </div>
   <div class="row justify-content-center">
     <div id="paginator">
-      <%= paginate @product_items, remote: true, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm", nav_class: "d-inline-b" %>
+      <%#= paginate @product_items, remote: true, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm", nav_class: "d-inline-b" %>
     </div>
   </div>
   <div class="pb-2 pl-5">
     <div class="row justify-content-center">
       <span class="pt-2 pr-5 pl-2 pager-info ">
-          <%= "Visualizando #{@product_items.current_page} - #{@product_items.total_pages}  de #{@list.product_items_count}
+          <%#= "Visualizando #{@product_items.current_page} - #{@product_items.total_pages}  de #{@list.product_items_count}
             registros" %>
         </span>
     </div>

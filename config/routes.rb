@@ -48,9 +48,12 @@ Rails.application.routes.draw do
     resources :product_items, module: :lists, only: [:new]
   end
   resources :categories do
-    member do
-      get :products
+    resources :products, module: :categories do
+      collection do
+        get 'search', to: 'products#search'
+      end
     end
+
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
