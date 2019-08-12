@@ -1,9 +1,3 @@
-jQuery(document).ready(function () {
-    if (page.controller() !== 'product_items' && page.action() !== 'new') { return; }
-    activeLastItem();
-    searchProductsFromCategory();
-});
-
 function activeLastItem() {
     $('.wizard__wizard-item-last').children().find('i').removeClass('fa-circle');
     $('.wizard__wizard-item-last').children().find('i').addClass('fa-check-circle');
@@ -20,4 +14,25 @@ function searchProductsFromCategory() {
         .fail(function() {
 
         })
-};
+}
+
+
+jQuery(document).ready(function () {
+    if (page.controller() !== 'product_items' && page.action() !== 'new') { return; }
+    activeLastItem();
+    searchProductsFromCategory();
+
+    $('.categoryFilter').on('change', function() {
+        if (this.checked) {
+            $.get('/categories/'+$(this).val()+'/products/search', function() {
+            })
+                .done(function(data) {
+
+                })
+                .fail(function() {
+
+                })
+        }
+    });
+});
+

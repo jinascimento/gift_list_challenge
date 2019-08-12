@@ -8,14 +8,27 @@
     <h1 class="jumbotron-heading" data-list-category="<%= @list.category_id %>"><%= @list.name %></h1>
     <p class="lead text-muted">Procure seus produtos
     <p>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Filtrar por categoria
+      </button>
+    </p>
+    <div class="collapse" id="collapseExample">
+      <% Category.all.each do |c| %>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input categoryFilter" type="radio" name="inlineRadioOptions" value="<%= c.id %>">
+          <label class="form-check-label" for="inlineRadio1"><%= c.name %></label>
+        </div>
+      <% end %>
+    </div>
+    <p>
     <div id="cover">
-      <%= form_with url: search_category_products_path(category_id: @list.category_id), method: :get do |f| %>
+      <%= form_with url: search_category_products_path(category_id: @list.category_id), method: :get, id: 'form-search-product' do |f| %>
         <div class="tb">
           <div class="td">
             <%= f.text_field :name, placeholder: 'Nome do produto', required: true %>
           </div>
           <div class="td" id="s-cover">
-            <%= button_tag type: 'submit', id: "search-product" do %>
+            <%= button_tag type: 'submit', id: "submit-product" do %>
               <%= fa_icon "search", class: 'fa-2x' %>
             <% end %>
           </div>
