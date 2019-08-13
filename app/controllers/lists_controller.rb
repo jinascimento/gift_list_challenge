@@ -17,6 +17,7 @@ class ListsController < ApplicationController
   def create
     create_list = Lists::ListCreator.call(params_list)
     if create_list
+      @lists = List.includes(:category)
       render :create
     else
       render :new

@@ -98,19 +98,6 @@ button span#span-search
   transition: 0.5s ease all;
 }
 
-button span:before, button span:after
-{
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 45px;
-  height: 15px;
-  background-color: #fff;
-  border-radius: 10px;
-  transform: rotateZ(0);
-  transition: 0.5s ease all;
-}
 
 #s-cover:hover #s-circle
 {
@@ -147,6 +134,18 @@ button span:before, button span:after
   right: -6px;
   width: 40px;
   background-color: #fff;
+}
+
+#add-product {
+  align-items: center;
+  display: flex;
+  height: 50px;
+}
+
+.add-product-button {
+  background-color: #D4EDE7;
+  color: black;
+  border-color: #D4EDE7;
 }
 
 @media only screen and (max-width: 600px) {

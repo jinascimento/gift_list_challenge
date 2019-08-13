@@ -50,5 +50,22 @@ jQuery(document).ready(function () {
     $('#name').keyup(function(){
         searchWithKeyUp($(this).val());
     });
+
+    $('.add-product-button').on('click', function() {
+        let products_checked = [];
+        $('.check-box-products').each(function() {
+            if (this.checked) {
+                products_checked.push($(this).val());
+            }
+        });
+
+        $('#product_ids_').val(products_checked);
+    });
+
+    $('#create-product-item').on('submit', function(){
+        $('.add-product-button').val('Adicionando produtos...');
+        $('.add-product-button').attr('disabled', 'true');
+    })
+
 });
 

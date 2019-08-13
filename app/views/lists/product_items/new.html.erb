@@ -39,7 +39,15 @@
     </p>
   </div>
 </section>
-
+<section id="add-product">
+  <div class="container text-right">
+    <%= form_with url: list_product_items_path, id: 'create-product-item' do |f| %>
+      <%= f.hidden_field 'list_id', value: @list.id %>
+      <%= hidden_field_tag "product_ids[]" %>
+      <%= f.submit 'Adicionar produtos a lista', class: 'btn btn-primary add-product-button' %>
+    <% end %>
+  </div>
+</section>
 <div class="album py-5 bg-light">
   <div class="container">
     <div class="row" id="product">

@@ -1,6 +1,6 @@
 .jumbotron {
   background-color: #D4EDE7;
-  border-bottom: 40px solid;
+  border-bottom: 50px solid;
   border-bottom-color: #fd6b54;
   margin-bottom: 0;
 
@@ -64,4 +64,14 @@ ul {
 
 .page-link {
   color: #000000;
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+  color: #fff;
+  background-color: #D4EDE7;
+  border-color: #D4EDE7;
+}
+
+.btn:disabled {
+  opacity: 4.65;
 }
