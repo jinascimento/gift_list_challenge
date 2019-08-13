@@ -48,6 +48,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'dotenv-rails'
   gem 'pry-nav'
+  gem 'rspec-rails', '~> 3.6'
+  gem 'factory_bot_rails'
 end
 
 group :development do
