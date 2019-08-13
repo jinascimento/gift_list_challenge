@@ -4,16 +4,16 @@ RSpec.describe Categories::ProductsController, type: :controller do
   context 'User is logged in' do
     login_user
 
-    describe 'User'
-
+    describe 'User' do
       it "should have a current_user" do
         expect(subject.current_user).to_not eq(nil)
       end
+    end
 
-      it "should get search" do
-        get :search, params: { category_id: 1 }, xhr: true
-        expect(response).to be_success
-      end
+    it "#search" do
+      get :search, params: { category_id: 1 }, xhr: true
+      expect(response).to be_success
+    end
 
     it "Should return products searched" do
       product = create(:product, :reindex, name: 'apple')
