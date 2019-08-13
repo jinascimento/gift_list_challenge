@@ -13,5 +13,3 @@ Page = (function() {
     return Page;
 })();
 this.page = new Page;
-
-console.log('aqui')

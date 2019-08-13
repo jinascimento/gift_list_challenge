@@ -45,7 +45,7 @@ Rails.application.routes.draw do
   root 'lists#index'
   devise_for :users
   resources :lists do
-    resources :product_items, module: :lists, only: [:new]
+    resources :product_items, module: :lists, only: [:new, :create]
   end
   resources :categories do
     resources :products, module: :categories do
