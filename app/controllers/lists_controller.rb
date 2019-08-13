@@ -15,7 +15,7 @@ class ListsController < ApplicationController
   end
 
   def create
-    create_list = Lists::ListCustomizationCreator.call(params_list)
+    create_list = Lists::CustomizationListCreator.call(params_list)
     if create_list
       @lists = List.includes(:category)
       render :create

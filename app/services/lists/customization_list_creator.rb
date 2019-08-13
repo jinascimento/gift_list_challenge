@@ -1,4 +1,4 @@
-class Lists::ListCustomizationCreator
+class Lists::CustomizationListCreator
   def self.call(*args)
     new(*args).execute
   end
