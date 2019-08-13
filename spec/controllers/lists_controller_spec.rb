@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Lists::ProductItemsController, type: :controller do
+RSpec.describe ListsController, type: :controller do
   context 'Users is logged in' do
     login_user
 
@@ -10,18 +10,23 @@ RSpec.describe Lists::ProductItemsController, type: :controller do
       end
     end
 
-    it "#new" do
-      get :new, params: { list_id: 1 }
+    it "#index" do
+      get :index
       expect(response).to be_success
     end
 
-    it "#create" do
-      product = create_list(:product, 3)
-      product_ids = product.map {|p| p.id }
-      list = create(:list)
-      post :create, params: { product_ids: product_ids, list_id: list.id }, xhr: true
+    it "#show" do
+      product_item = create(:product_item)
+      get :show, params: { id: product_item.list.id }
 
-      expect(assigns(:list).product_items.map { |p| p.product_id }).to match_array(product_ids)
+      expect(assigns(:product_items)).to_not be_nil
+    end
+
+    it "#create" do
+      list = create(:list)
+      create(:category, name: 'customization')
+      post :create, params: { list: {name: list.name }}, xhr: true
+      expect(assigns(:lists)).to_not be_nil
     end
   end
 
