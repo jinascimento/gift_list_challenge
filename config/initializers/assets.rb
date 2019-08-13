@@ -17,6 +17,8 @@ Rails.application.config.assets.precompile += %w(
 Rails.application.config.assets.precompile += %w(
   lists/wizard.scss
   lists/index.scss
+  devise/registrations.new.scss
+  devise/sessions.new.scss
   lists/product_items/new.scss
   override_bootstrap.scss
  )
