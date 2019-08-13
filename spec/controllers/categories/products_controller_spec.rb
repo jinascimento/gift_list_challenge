@@ -12,7 +12,7 @@ RSpec.describe Categories::ProductsController, type: :controller do
 
     it "#search" do
       get :search, params: { category_id: 1 }, xhr: true
-      expect(response).to be_success
+      expect(response).to be_successful
     end
 
     it "Should return products searched" do

@@ -12,7 +12,13 @@ RSpec.describe ListsController, type: :controller do
 
     it "#index" do
       get :index
-      expect(response).to be_success
+      expect(response).to be_successful
+    end
+
+    it '#new' do
+      create(:category, name: 'customization')
+      get :new, xhr: true
+      expect(assigns(:list)).to_not be_nil
     end
 
     it "#show" do
@@ -22,11 +28,20 @@ RSpec.describe ListsController, type: :controller do
       expect(assigns(:product_items)).to_not be_nil
     end
 
-    it "#create" do
-      list = create(:list)
-      create(:category, name: 'customization')
-      post :create, params: { list: {name: list.name }}, xhr: true
-      expect(assigns(:lists)).to_not be_nil
+    describe '#create' do
+      it "successful" do
+        list = create(:list)
+        create(:category, name: 'customization')
+        post :create, params: { list: {name: list.name }}, xhr: true
+        expect(assigns(:lists)).to_not be_nil
+      end
+
+      it 'failed without name of list' do
+        create(:list)
+        create(:category, name: 'customization')
+        post :create, params: { list: {name: ' '}}, xhr: true
+        expect(assigns(:lists)).to be_nil
+      end
     end
   end
 
