@@ -15,7 +15,7 @@
 class Product < ApplicationRecord
   searchkick
 
-  scope :search_on_elasticsearch, ->(name, category_id, per_page, page) { search(name || '*',
+  scope :search_on_elasticsearch, ->(name, category_id, page, per_page) { search(name || '*',
                                                              where: { category_id: category_id },
                                                              page: page, per_page: per_page || 10) }
   belongs_to :category
