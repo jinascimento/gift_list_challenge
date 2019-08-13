@@ -58,14 +58,18 @@ jQuery(document).ready(function () {
                 products_checked.push($(this).val());
             }
         });
-
-        $('#product_ids_').val(products_checked);
+        $('#product_ids').val(products_checked);
     });
 
     $('#create-product-item').on('submit', function(){
         $('.add-product-button').val('Adicionando produtos...');
         $('.add-product-button').attr('disabled', 'true');
-    })
+    });
+
 
 });
 
+
+$(document).on('change', '.check-box-products', function() {
+    $('.add-product-button').prop("disabled", false);
+});

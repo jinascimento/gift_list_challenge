@@ -5,7 +5,7 @@ class Lists::ProductItemsController < ApplicationController
 
   def create
     create_product_item = Lists::ProductItems::ProductItemCreator.call(product_item_params, params[:product_ids])
-    if create_product_item
+    if create_product_item.include? true
       @list = List.find_by(id: product_item_params[:list_id])
       render :create
     else

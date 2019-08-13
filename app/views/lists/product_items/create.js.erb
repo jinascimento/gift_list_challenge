@@ -1,2 +1,3 @@
 $('.add-product-button').val('Adicionar produtos a lista');
 $('.add-product-button').attr('disabled', 'false');
+$('#status-create-product').html('Produtos adicionados a lista! <%= link_to 'Visualize sua lista', list_path(@list) %>')

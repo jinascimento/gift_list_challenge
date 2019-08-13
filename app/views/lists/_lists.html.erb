@@ -1,7 +1,6 @@
 <% @lists.each_with_index do |l, i| %>
   <% i += 1 %>
-
-  <%= link_to list_path(l), class: 'col-sm' do %>
+  <%= link_to list_path(l), class: "col-sm#{ '-6' if @lists.last.id == l.id }" do %>
       <div class="card  box-shadow">
         <%= image_tag("#{l.category.name.gsub(' ', '-')}.png", {:style => "", class: "card-img-top #{l.category.name.gsub(' ', '-')}", 'data-holder-rendered': "true"}) %>
       </div>
