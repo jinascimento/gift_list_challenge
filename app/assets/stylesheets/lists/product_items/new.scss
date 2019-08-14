@@ -152,6 +152,10 @@ input#name {
   color: #E16868;
 }
 
+.description {
+  height: 80px;
+}
+
 @media only screen and (max-width: 600px) {
   input[type="text"]
   {

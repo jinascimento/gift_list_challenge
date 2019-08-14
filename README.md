@@ -38,9 +38,14 @@ Foi utilizado uma estratégia simples e eficaz, seleção de todos os produtos e
  `bundle install`
 
 `rails db:setup`
+
 `rails searchkick:reindex CLASS=Product`
-* Suba o servidor rails rodando o comando  `rails s`
-* O Projeto estara disponivel em `http://localhost:3000`
+* Suba o servidor rails rodando o comando  
+  - `rails s`
+* Testes unitários: 
+  - `rspec`
+* O Projeto estara disponivel em 
+  - `http://localhost:3000`
 
 
 ### Com docker
@@ -66,7 +71,13 @@ Foi utilizado uma estratégia simples e eficaz, seleção de todos os produtos e
  - `docker-compose run web rails db:setup`
 * Indexação dos produtos com o comando 
  - `docker-compose run web rails searchkick:reindex CLASS=Product`
+* Testes unitários:
+ - `docker-compose run web rspec`
 * O Projeto estara disponivel em `http://localhost:3000`
+
+### Cobertura de testes:
+![image](https://user-images.githubusercontent.com/25302676/62994251-4d3c8e80-be31-11e9-9b01-a3a189e0bc8e.png)
+
 
 
 

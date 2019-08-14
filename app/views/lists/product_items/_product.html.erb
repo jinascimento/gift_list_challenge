@@ -9,7 +9,9 @@
       </div>
       <div class="card-body text-center">
         <p><%= l.name %></p>
-        <small class="text-muted"><%= l.description %></small>
+        <div class="description">
+          <small class="text-muted"><%= l.description %></small>
+        </div>
         <strong><p><%= number_to_currency_br(l.price) %></p></strong>
       </div>
     </div>
