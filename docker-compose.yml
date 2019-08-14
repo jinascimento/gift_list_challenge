@@ -1,0 +1,20 @@
+web:
+  build: .
+  command: rails s -p 3000 -b '0.0.0.0'
+  ports:
+    - "3000:3000"
+  links:
+    - db
+    - elasticsearch
+  env_file:
+    - .env
+elasticsearch:
+  image: docker.elastic.co/elasticsearch/elasticsearch:7.3.0
+  environment:
+    - discovery.type=single-node
+  ports:
+    - 9200:9200
+db:
+  image: postgres:10.4-alpine
+  ports:
+    - 5432:5432

@@ -3,7 +3,7 @@ default: &default
   encoding: unicode
   user: <%= ENV["GIFT_LIST_DB_USERNAME"] %>
   password: <%= ENV["GIFT_LIST_DB_PASSWORD"] %>
-  host: <%= ENV["GIFT_LIST_DB_HOSTNAME"]  %>
+  host: db
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   port: <%= ENV["GIFT_LIST_DB_PORT"] %>
   wait_timeout: 900 # 15 minutes.
