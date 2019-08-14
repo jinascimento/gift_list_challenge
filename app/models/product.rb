@@ -17,8 +17,10 @@ class Product < ApplicationRecord
 
   validates :name, presence: true
   scope :search_on_elasticsearch, ->(name, category_id, page, per_page) { search(name.present? ? name: '*',
-                                                             where: { category_id: category_id },
-                                                             page: page, per_page: per_page || 10) }
+                                                                                 fields: [:name, :description],
+                                                                                 where: { category_id: category_id },
+                                                                                 page: page, per_page: per_page || 10)
+  }
   belongs_to :category
   has_one :product_item
 end

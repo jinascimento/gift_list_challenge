@@ -22,9 +22,6 @@ WORKDIR /app
 # are made.
 COPY Gemfile Gemfile.lock ./ 
 RUN gem install bundler && bundle install
-COPY docker-entrypoint.sh /usr/bin/
-RUN chmod +x /usr/bin/docker-entrypoint.sh
-ENTRYPOINT ["docker-entrypoint.sh"]
 # Copy the main application.
 COPY . ./
 

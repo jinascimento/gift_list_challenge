@@ -6,6 +6,8 @@ web:
   links:
     - db
     - elasticsearch
+  environment:
+    - RAILS_ENV=dev_docker
   env_file:
     - .env
 elasticsearch:

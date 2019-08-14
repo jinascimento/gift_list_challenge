@@ -3,7 +3,7 @@ default: &default
   encoding: unicode
   user: <%= ENV["GIFT_LIST_DB_USERNAME"] %>
   password: <%= ENV["GIFT_LIST_DB_PASSWORD"] %>
-  host: db
+  host: <%= ENV["GIFT_LIST_DB_HOSTNAME"] %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   port: <%= ENV["GIFT_LIST_DB_PORT"] %>
   wait_timeout: 900 # 15 minutes.
@@ -12,6 +12,11 @@ default: &default
 development:
   <<: *default
   database: gift_list_development
+
+dev_docker:
+  <<: *default
+  host: db
+  database: gift_list_dev_docker
 
 test:
   <<: *default
