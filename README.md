@@ -8,7 +8,7 @@ Precisamos melhorar a experiência de usuário em uma tela específica do nosso 
 
 2. Como um usuário dono de lista eu quero poder selecionar vários produtos e adicioná-los à minha lista de presentes para que eu possa ter minha lista de presentes com produtos customizados.
 
-# Especificaão técnica
+# Especificação técnica
 
 1 - Busca de produtos
 
